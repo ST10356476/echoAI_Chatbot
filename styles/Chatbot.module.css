@@ -1,0 +1,143 @@
+/* Background Animation for Futuristic Theme */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 20s ease infinite;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
+/* Stars Animation */
+@keyframes stars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/stars.png') repeat;
+    opacity: 0.4;
+    animation: stars 80s linear infinite;
+}
+
+/* Message List Styling */
+.messageList {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* User and Assistant Messages */
+.userMessage, .assistantMessage {
+    position: relative;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out, background 0.3s ease;
+}
+
+.userMessage {
+    text-align: right;
+    color: #00ff99;
+    border: 1px solid #00ff99;
+}
+
+.assistantMessage {
+    text-align: left;
+    color: #ff66b2;
+    border: 1px solid #ff66b2;
+}
+
+.userMessage:hover, .assistantMessage:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Loading Indicator */
+.loading {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    color: #00ffff;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Input Container and Fields */
+.inputContainer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #00ffff;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.inputField {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #00ffff;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #00ffff;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.inputField:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.sendButton {
+    padding: 12px 24px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #00ffff;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.sendButton:hover {
+    background: #00cccc;
+    transform: scale(1.05);
+}
+
+.sendButton:active {
+    transform: scale(0.98);
+}
